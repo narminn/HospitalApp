@@ -1,0 +1,17 @@
+C:\Users\Dr.Rashad\source\repos\Hospital\Hospital\bin\Debug\Hospital.exe.config
+C:\Users\Dr.Rashad\source\repos\Hospital\Hospital\bin\Debug\Hospital.exe
+C:\Users\Dr.Rashad\source\repos\Hospital\Hospital\bin\Debug\Hospital.pdb
+C:\Users\Dr.Rashad\source\repos\Hospital\Hospital\obj\Debug\Hospital.csprojResolveAssemblyReference.cache
+C:\Users\Dr.Rashad\source\repos\Hospital\Hospital\obj\Debug\Hospital.Form1.resources
+C:\Users\Dr.Rashad\source\repos\Hospital\Hospital\obj\Debug\Hospital.Properties.Resources.resources
+C:\Users\Dr.Rashad\source\repos\Hospital\Hospital\obj\Debug\Hospital.csproj.GenerateResource.Cache
+C:\Users\Dr.Rashad\source\repos\Hospital\Hospital\obj\Debug\Hospital.csproj.CoreCompileInputs.cache
+C:\Users\Dr.Rashad\source\repos\Hospital\Hospital\obj\Debug\Hospital.exe
+C:\Users\Dr.Rashad\source\repos\Hospital\Hospital\obj\Debug\Hospital.pdb
+C:\Users\Dr.Rashad\source\repos\Hospital\Hospital\bin\Debug\EntityFramework.dll
+C:\Users\Dr.Rashad\source\repos\Hospital\Hospital\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dr.Rashad\source\repos\Hospital\Hospital\bin\Debug\EntityFramework.xml
+C:\Users\Dr.Rashad\source\repos\Hospital\Hospital\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dr.Rashad\source\repos\Hospital\Hospital\obj\Debug\Hospital.Patiens_Info_Form.resources
+C:\Users\Dr.Rashad\source\repos\Hospital\Hospital\obj\Debug\Hospital.UpdateForm.resources
+C:\Users\Dr.Rashad\source\repos\Hospital\Hospital\obj\Debug\Hospital.DeleteForm.resources

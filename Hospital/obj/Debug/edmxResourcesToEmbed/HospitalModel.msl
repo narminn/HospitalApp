@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Hospital_DbModelStoreContainer" CdmEntityContainer="Hospital_DbEntities">
+    <EntitySetMapping Name="Card_Types">
+      <EntityTypeMapping TypeName="Hospital_DbModel.Card_Types">
+        <MappingFragment StoreEntitySet="Card_Types">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Card_type_name" ColumnName="Card_type_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marital_Statuses">
+      <EntityTypeMapping TypeName="Hospital_DbModel.Marital_Statuses">
+        <MappingFragment StoreEntitySet="Marital_Statuses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Marital_status_name" ColumnName="Marital_status_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Next_of_kins">
+      <EntityTypeMapping TypeName="Hospital_DbModel.Next_of_kins">
+        <MappingFragment StoreEntitySet="Next_of_kins">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Kin_fullname" ColumnName="Kin_fullname" />
+          <ScalarProperty Name="Kin_gender" ColumnName="Kin_gender" />
+          <ScalarProperty Name="Kin_stateof_origin_id" ColumnName="Kin_stateof_origin_id" />
+          <ScalarProperty Name="Kin_phone" ColumnName="Kin_phone" />
+          <ScalarProperty Name="Kin_address" ColumnName="Kin_address" />
+          <ScalarProperty Name="Kin_relation_of_patient" ColumnName="Kin_relation_of_patient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Occupations">
+      <EntityTypeMapping TypeName="Hospital_DbModel.Occupation">
+        <MappingFragment StoreEntitySet="Occupation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Occupation_name" ColumnName="Occupation_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="Hospital_DbModel.Patient">
+        <MappingFragment StoreEntitySet="Patients">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Patient_title_id" ColumnName="Patient_title_id" />
+          <ScalarProperty Name="Patient_firstname" ColumnName="Patient_firstname" />
+          <ScalarProperty Name="Patient_middlename" ColumnName="Patient_middlename" />
+          <ScalarProperty Name="Patient_surname" ColumnName="Patient_surname" />
+          <ScalarProperty Name="Patient_gender" ColumnName="Patient_gender" />
+          <ScalarProperty Name="Patient_marital_status_id" ColumnName="Patient_marital_status_id" />
+          <ScalarProperty Name="Patient_dateof_birth" ColumnName="Patient_dateof_birth" />
+          <ScalarProperty Name="Patient_stateof_origin_id" ColumnName="Patient_stateof_origin_id" />
+          <ScalarProperty Name="Patient_tribe" ColumnName="Patient_tribe" />
+          <ScalarProperty Name="Patient_religion_id" ColumnName="Patient_religion_id" />
+          <ScalarProperty Name="Patient_occupation_id" ColumnName="Patient_occupation_id" />
+          <ScalarProperty Name="Patient_permanent_address" ColumnName="Patient_permanent_address" />
+          <ScalarProperty Name="Patient_home_address" ColumnName="Patient_home_address" />
+          <ScalarProperty Name="Patient_phone" ColumnName="Patient_phone" />
+          <ScalarProperty Name="Patient_relation_id" ColumnName="Patient_relation_id" />
+          <ScalarProperty Name="Patient_account_no" ColumnName="Patient_account_no" />
+          <ScalarProperty Name="Patient_photo" ColumnName="Patient_photo" />
+          <ScalarProperty Name="Patient_file" ColumnName="Patient_file" />
+          <ScalarProperty Name="Patient_card_type_id" ColumnName="Patient_card_type_id" />
+          <ScalarProperty Name="Patient_status" ColumnName="Patient_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Religions">
+      <EntityTypeMapping TypeName="Hospital_DbModel.Religion">
+        <MappingFragment StoreEntitySet="Religions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Religion_name" ColumnName="Religion_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="State_of_origins">
+      <EntityTypeMapping TypeName="Hospital_DbModel.State_of_origins">
+        <MappingFragment StoreEntitySet="State_of_origins">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="State_of_origin_name" ColumnName="State_of_origin_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Titles">
+      <EntityTypeMapping TypeName="Hospital_DbModel.Title">
+        <MappingFragment StoreEntitySet="Titles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title_name" ColumnName="Title_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

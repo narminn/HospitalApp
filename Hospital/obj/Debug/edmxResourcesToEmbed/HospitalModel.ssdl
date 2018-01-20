@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Hospital_DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Card_Types">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Card_type_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Marital_Statuses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Marital_status_name" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Next_of_kins">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kin_fullname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Kin_gender" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Kin_stateof_origin_id" Type="int" Nullable="false" />
+    <Property Name="Kin_phone" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Kin_address" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Kin_relation_of_patient" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Occupation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Occupation_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Patients">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Patient_title_id" Type="int" Nullable="false" />
+    <Property Name="Patient_firstname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patient_middlename" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patient_surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patient_gender" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Patient_marital_status_id" Type="int" Nullable="false" />
+    <Property Name="Patient_dateof_birth" Type="datetime" Nullable="false" />
+    <Property Name="Patient_stateof_origin_id" Type="int" Nullable="false" />
+    <Property Name="Patient_tribe" Type="nvarchar" MaxLength="50" />
+    <Property Name="Patient_religion_id" Type="int" Nullable="false" />
+    <Property Name="Patient_occupation_id" Type="int" Nullable="false" />
+    <Property Name="Patient_permanent_address" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Patient_home_address" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Patient_phone" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Patient_relation_id" Type="int" Nullable="false" />
+    <Property Name="Patient_account_no" Type="int" Nullable="false" />
+    <Property Name="Patient_photo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Patient_file" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Patient_card_type_id" Type="int" Nullable="false" />
+    <Property Name="Patient_status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Religions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Religion_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="State_of_origins">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="State_of_origin_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Titles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title_name" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="NextofKins_Origins">
+    <End Role="State_of_origins" Type="Self.State_of_origins" Multiplicity="1" />
+    <End Role="Next_of_kins" Type="Self.Next_of_kins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State_of_origins">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Next_of_kins">
+        <PropertyRef Name="Kin_stateof_origin_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Patiens_MaritalStatuses">
+    <End Role="Marital_Statuses" Type="Self.Marital_Statuses" Multiplicity="1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marital_Statuses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="Patient_marital_status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Patiens_Origins">
+    <End Role="State_of_origins" Type="Self.State_of_origins" Multiplicity="1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State_of_origins">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="Patient_stateof_origin_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Patiens_Religions">
+    <End Role="Religions" Type="Self.Religions" Multiplicity="1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Religions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="Patient_religion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Patiens_Titles">
+    <End Role="Titles" Type="Self.Titles" Multiplicity="1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Titles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="Patient_title_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Patients_CardTypes">
+    <End Role="Card_Types" Type="Self.Card_Types" Multiplicity="1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Card_Types">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="Patient_card_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Patients_Occupations">
+    <End Role="Occupation" Type="Self.Occupation" Multiplicity="1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Occupation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="Patient_occupation_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Hospital_DbModelStoreContainer">
+    <EntitySet Name="Card_Types" EntityType="Self.Card_Types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Marital_Statuses" EntityType="Self.Marital_Statuses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Next_of_kins" EntityType="Self.Next_of_kins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Occupation" EntityType="Self.Occupation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Religions" EntityType="Self.Religions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="State_of_origins" EntityType="Self.State_of_origins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Titles" EntityType="Self.Titles" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="NextofKins_Origins" Association="Self.NextofKins_Origins">
+      <End Role="State_of_origins" EntitySet="State_of_origins" />
+      <End Role="Next_of_kins" EntitySet="Next_of_kins" />
+    </AssociationSet>
+    <AssociationSet Name="Patiens_MaritalStatuses" Association="Self.Patiens_MaritalStatuses">
+      <End Role="Marital_Statuses" EntitySet="Marital_Statuses" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="Patiens_Origins" Association="Self.Patiens_Origins">
+      <End Role="State_of_origins" EntitySet="State_of_origins" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="Patiens_Religions" Association="Self.Patiens_Religions">
+      <End Role="Religions" EntitySet="Religions" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="Patiens_Titles" Association="Self.Patiens_Titles">
+      <End Role="Titles" EntitySet="Titles" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="Patients_CardTypes" Association="Self.Patients_CardTypes">
+      <End Role="Card_Types" EntitySet="Card_Types" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="Patients_Occupations" Association="Self.Patients_Occupations">
+      <End Role="Occupation" EntitySet="Occupation" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
